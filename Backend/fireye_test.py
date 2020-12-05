@@ -80,7 +80,7 @@ def data_text_search_filter(url, public_key, private_key):
         'offset': '5'
     }
     text_search_query = '/search/text?' + urllib.urlencode(params)
-    print 'text_search_query', text_search_query
+    print('text_search_query', text_search_query)
     data(url, text_search_query,  public_key, private_key)
 
     params = {

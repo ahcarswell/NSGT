@@ -1,4 +1,4 @@
-from firebase import firebase
+from firebase import Firebase
 
 firebase = firebase.FirebaseApplication("https://nsgt-5ed5a-default-rtdb.firebaseio.com/", None)
 
@@ -11,3 +11,4 @@ data = {
 }
 
 result = firebase.post('/nsgt-5ed5a-default-rtdb/Users', data)
+
