@@ -31,6 +31,8 @@ db.child("questions").push(q2)
 db.child("questions").push(q3)
 db.child("questions").push(q4)
 
+<<<<<<< HEAD
+=======
 a1 = {"answer": "construction and engineering firms", "ID":"a001", "parent":["q001"]}
 a2 = {"answer": "aerospace firms", "ID":"a002", "parent":["q001"]}
 a3 = {"answer": "United States Government agencies", "ID":"a003", "parent":["q001"], "DR":["q002"]}
@@ -55,6 +57,7 @@ db.child("answers").push(a8)
 db.child("answers").push(a9)
 
 
+>>>>>>> 8ed737b280638151e01959e1fb8bdb4d93cebbea
 
 '''
 firebase = firebase.FirebaseApplication("https://nsgt-5ed5a-default-rtdb.firebaseio.com/", None)
