@@ -1,19 +1,19 @@
 from firebase import Firebase
 
-apiKey: "AIzaSyBathSfk_1F36efi-zc5DlwKlHvrHG_ors",
-    authDomain: "nsgt-5ed5a.firebaseapp.com",
-    databaseURL: "https://nsgt-5ed5a-default-rtdb.firebaseio.com",
-    projectId: "nsgt-5ed5a",
-    storageBucket: "nsgt-5ed5a.appspot.com",
-    messagingSenderId: "436519156337",
-    appId: "1:436519156337:web:e4f44e253153cc80bdb9d0",
-    measurementId: "G-CHDNNE6FVT" 
+apiKey = "AIzaSyBathSfk_1F36efi-zc5DlwKlHvrHG_ors"
+authDomain = "nsgt-5ed5a.firebaseapp.com"
+databaseURL =  "https://nsgt-5ed5a-default-rtdb.firebaseio.com"
+projectId = "nsgt-5ed5a"
+storageBucket = "nsgt-5ed5a.appspot.com"
+messagingSenderId = "436519156337"
+appId = "1:436519156337:web:e4f44e253153cc80bdb9d0"
+measurementId = "G-CHDNNE6FVT"
 
 config = {
-  "apiKey": "apiKey",
-  "authDomain": "projectId.firebaseapp.com",
-  "databaseURL": "https://databaseName.firebaseio.com",
-  "storageBucket": "projectId.appspot.com",
+  "apiKey": apiKey,
+  "authDomain": "{}.firebaseapp.com".format(projectId),
+  "databaseURL": databaseURL,
+  "storageBucket": storageBucket,
   "serviceAccount": "path/to/serviceAccountCredentials.json"
 }
 
@@ -46,15 +46,15 @@ a7 = {"answer": "Snugride - backdoor that communicates with C2 server via HTTPS 
 a8 = {"answer": "Spear phising attacks sent to target emails with malicious files attached to the email", "ID":"a008", "parent":["q003"], "DR" ["a006", "a007"]}
 a9 = {"answer": "Register C2 domains that closely resemble legitimate Japanese organisations", "ID":"a009", "parent":["q003"]}
 
-db.child("questions").push(a1)
-db.child("questions").push(a2)
-db.child("questions").push(a3)
-db.child("questions").push(a4)
-db.child("questions").push(a5)
-db.child("questions").push(a6)
-db.child("questions").push(a7)
-db.child("questions").push(a8)
-db.child("questions").push(a9)
+db.child("answers").push(a1)
+db.child("answers").push(a2)
+db.child("answers").push(a3)
+db.child("answers").push(a4)
+db.child("answers").push(a5)
+db.child("answers").push(a6)
+db.child("answers").push(a7)
+db.child("answers").push(a8)
+db.child("answers").push(a9)
 
 
 >>>>>>> 8ed737b280638151e01959e1fb8bdb4d93cebbea
@@ -71,4 +71,8 @@ data = {
 }
 
 result = firebase.post('/nsgt-5ed5a-default-rtdb/Users', data)
+<<<<<<< HEAD
+
+=======
 '''
+>>>>>>> a1e133dfff187896705a4e2a5215883fdcb6756d
