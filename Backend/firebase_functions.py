@@ -21,6 +21,16 @@ firebase = Firebase(config)
 db = firebase.database()
 
 
+q1 = {"question": "What are the Target Sectors of APT 10?", "type": "reconnaissance"}
+q2 = {"question": "Why target the U.S. Govt?", "type": "reconnaissance"}
+q3 = {"question": "Attack Pattern", "type": "reconnaissance"}
+q4 = {"question": "Software Deployment Tools"}
+
+db.child("questions").push(q1)
+db.child("questions").push(q2)
+db.child("questions").push(q3)
+db.child("questions").push(q4)
+
 '''
 firebase = firebase.FirebaseApplication("https://nsgt-5ed5a-default-rtdb.firebaseio.com/", None)
 
