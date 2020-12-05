@@ -44,15 +44,15 @@ a7 = {"answer": "Snugride - backdoor that communicates with C2 server via HTTPS 
 a8 = {"answer": "Spear phising attacks sent to target emails with malicious files attached to the email", "ID":"a008", "parent":["q003"], "DR" ["a006", "a007"]}
 a9 = {"answer": "Register C2 domains that closely resemble legitimate Japanese organisations", "ID":"a009", "parent":["q003"]}
 
-db.child("questions").push(a1)
-db.child("questions").push(a2)
-db.child("questions").push(a3)
-db.child("questions").push(a4)
-db.child("questions").push(a5)
-db.child("questions").push(a6)
-db.child("questions").push(a7)
-db.child("questions").push(a8)
-db.child("questions").push(a9)
+db.child("answers").push(a1)
+db.child("answers").push(a2)
+db.child("answers").push(a3)
+db.child("answers").push(a4)
+db.child("answers").push(a5)
+db.child("answers").push(a6)
+db.child("answers").push(a7)
+db.child("answers").push(a8)
+db.child("answers").push(a9)
 
 
 
