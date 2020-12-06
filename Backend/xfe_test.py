@@ -27,5 +27,62 @@ def get_cnc_ipv4():
     # Returns info back to the AJAX call
     return jsonify(cnc_ipv4)
 
+@app.route('/get_mal_hash', methods=['GET', 'POST'])
+def get_mal_hash():
+
+    mal_hash = request.args.get('hash')
+    search = "https://api.xforce.ibmcloud.com/malware/{}".format(mal_hash)
+    response = requests.get(search, auth=HTTPBasicAuth(api_key, api_pass)).json()
+    mal_ip = response["malware"]["origins"]["CnCServers"]["rows"][0]["ip"]
+
+    # Returns info back to the AJAX call
+    return jsonify(mal_ip)
+
+@app.route('/get_mal_fam', methods=['GET', 'POST'])
+def get_mal_fam():
+
+    mal_family = request.args.get('family')
+    search = "https://api.xforce.ibmcloud.com/malware/family/{}".format(mal_family)
+    response = requests.get(search, auth=HTTPBasicAuth(api_key, api_pass)).json()
+    mal_hashes = response["malware"]
+
+    # Returns info back to the AJAX call
+    return jsonify(mal_ip)
+
+@app.route('/get_ips', methods=['GET', 'POST'])
+def get_ips():
+
+    ### IP Report ###
+    ip = request.args.get('ip')
+    search = "https://api.xforce.ibmcloud.com/ipr/{}".format(ip)
+    response = requests.get(search, auth=HTTPBasicAuth(api_key, api_pass)).json()
+    ip_report = response["history"]
+
+    ### Botnet IPs ###
+    search = "https://api.xforce.ibmcloud.com//xfti/bots/ipv4"
+    response = requests.get(search, auth=HTTPBasicAuth(api_key, api_pass)).json()
+    bot_ip4 = response
+
+    search = "https://api.xforce.ibmcloud.com//xfti/bots/ipv6"
+    response = requests.get(search, auth=HTTPBasicAuth(api_key, api_pass)).json()
+    bot_ip6 = response
+
+    ### Malware IPs ###
+    search = "https://api.xforce.ibmcloud.com/ipr/malware/{}".format(ip)
+    response = requests.get(search, auth=HTTPBasicAuth(api_key, api_pass)).json()
+    ip_report = response["malware"]
+
+    ### Crytocurrency IPs ###
+    search = "https://api.xforce.ibmcloud.com/xfti/cryptomining/ipv4"
+    response = requests.get(search, auth=HTTPBasicAuth(api_key, api_pass)).json()
+    crypto_ipv4 = response
+
+    search = "https://api.xforce.ibmcloud.com/xfti/cryptomining/ipv6"
+    response = requests.get(search, auth=HTTPBasicAuth(api_key, api_pass)).json()
+    crypto_ipv6 = response
+
+    # Returns info back to the AJAX call
+    return jsonify(mal_ip)
+
 if __name__ == '__main__':
     app.run()
