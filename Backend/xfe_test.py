@@ -82,7 +82,7 @@ def get_ips():
     crypto_ipv6 = response
 
     # Returns info back to the AJAX call
-    return jsonify(mal_ip)
+    return jsonify(mal)
 
 if __name__ == '__main__':
     app.run()
