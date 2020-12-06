@@ -70,7 +70,7 @@ def get_ips():
     ### Malware IPs ###
     search = "https://api.xforce.ibmcloud.com/ipr/malware/{}".format(ip)
     response = requests.get(search, auth=HTTPBasicAuth(api_key, api_pass)).json()
-    ip_report = response["malware"]
+    malware = response["malware"]
 
     ### Crytocurrency IPs ###
     search = "https://api.xforce.ibmcloud.com/xfti/cryptomining/ipv4"
