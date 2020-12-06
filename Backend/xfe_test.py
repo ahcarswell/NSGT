@@ -55,15 +55,15 @@ def get_ips():
     ### IP Report ###
     ip = request.args.get('ip')
     search = "https://api.xforce.ibmcloud.com/ipr/{}".format(ip)
-    response = requests.get(search, auth=HTTPBasicAuth(api_key, api_pass)).json()
+    response = requests.get(search, auth=HTTPBasicAuth(api_key, api_pass)).html()
     ip_report = response["history"]
 
     ### Botnet IPs ###
-    search = "https://api.xforce.ibmcloud.com//xfti/bots/ipv4"
+    search = "https://api.xforce.ibmcloud.com/xfti/bots/ipv4"
     response = requests.get(search, auth=HTTPBasicAuth(api_key, api_pass)).json()
     bot_ip4 = response
 
-    search = "https://api.xforce.ibmcloud.com//xfti/bots/ipv6"
+    search = "https://api.xforce.ibmcloud.com/xfti/bots/ipv6"
     response = requests.get(search, auth=HTTPBasicAuth(api_key, api_pass)).json()
     bot_ip6 = response
 
@@ -82,7 +82,7 @@ def get_ips():
     crypto_ipv6 = response
 
     # Returns info back to the AJAX call
-    return jsonify(mal_ip)
+    return jsonify(ip_report)
 
 if __name__ == '__main__':
     app.run()
