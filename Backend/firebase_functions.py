@@ -31,8 +31,6 @@ db.child("questions").push(q2)
 db.child("questions").push(q3)
 db.child("questions").push(q4)
 
-<<<<<<< HEAD
-=======
 a1 = {"answer": "construction and engineering firms", "ID":"a001", "parent":["q001"]}
 a2 = {"answer": "aerospace firms", "ID":"a002", "parent":["q001"]}
 a3 = {"answer": "United States Government agencies", "ID":"a003", "parent":["q001"], "DR":["q002"]}
@@ -71,8 +69,5 @@ data = {
 }
 
 result = firebase.post('/nsgt-5ed5a-default-rtdb/Users', data)
-<<<<<<< HEAD
 
-=======
 '''
->>>>>>> a1e133dfff187896705a4e2a5215883fdcb6756d
